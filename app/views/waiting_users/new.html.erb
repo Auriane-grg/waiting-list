@@ -1,0 +1,7 @@
+<%= form_for @waiting_user, :remote => true do |f| %>
+  <%= f.text_field :first_name, id:'input-first-name' %>
+  <%= f.text_field :last_name, id:'input-last-name' %>
+  <%= f.text_field :phone, id:'input-phone' %>
+  <%= f.text_field :email, id:'input-email' %>
+  <%= f.submit %>
+<% end %>
