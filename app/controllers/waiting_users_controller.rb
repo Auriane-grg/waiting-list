@@ -6,11 +6,14 @@ class WaitingUsersController < ApplicationController
 
   def create
     @waiting_user = WaitingUser.new(waiting_user_params)
-    @waiting_user.queue_position = (WaitingUser.count) +1
-    if @waiting_user.save
-      redirect_to pages_queue_position_path(:id => @waiting_user.id)
-    else
-      render :new
+    # @waiting_user.queue_position = (WaitingUser.count) +1
+    respond_to do |format|
+      if @waiting_user.save
+        UserMailer.with(user: @waiting_user).welcome_email.deliver_later
+        format.html { redirect_to pages_first_inscription_path(:user => @waiting_user) }
+      else
+        format.html { render action: 'new' }
+      end
     end
   end
 
