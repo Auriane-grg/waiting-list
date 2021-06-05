@@ -1,7 +1,7 @@
 <div style="text-align: center">
   <h1>Welcome <%= @user.first_name.capitalize %></h1>
 
-  <p>To confirm your inscription into the waiting list for Brest coworking, just follow <a href="<%= url_for(host: 'http://localhost:3000/',
+  <p>To confirm your inscription into the waiting list for Brest coworking, just follow <a href="<%= url_for(host: 'https://waiting-list-mailer.herokuapp.com/',
               controller: 'pages',
               action: 'queue_position',
               user: @user ) %>" %>this link</a></p>

@@ -5,7 +5,7 @@
 
   <p>
     To remain into the waiting list for Brest coworking, just follow 
-    <a href="<%= url_for(host: 'http://localhost:3000/',
+    <a href="<%= url_for(host: 'https://waiting-list-mailer.herokuapp.com/',
       controller: 'pages',
       action: 'queue_position',
       user: @user ) %>" >
@@ -15,7 +15,7 @@
   </p>
   <p>
     To cancel your inscription into the waiting list for Brest coworking, just clic 
-      <a href="<%= url_for(host: 'http://localhost:3000/',
+      <a href="<%= url_for(host: 'https://waiting-list-mailer.herokuapp.com/',
       controller: 'pages',
       action: 'cancel_inscription',
       user: @user ) %>" >
