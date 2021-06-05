@@ -6,7 +6,6 @@ class WaitingUsersController < ApplicationController
 
   def create
     @waiting_user = WaitingUser.new(waiting_user_params)
-    # @waiting_user.queue_position = (WaitingUser.count) +1
     respond_to do |format|
       if @waiting_user.save
         UserMailer.with(user: @waiting_user).welcome_email.deliver_later

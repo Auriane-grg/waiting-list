@@ -1,7 +1,25 @@
-<%= form_for @waiting_user, :remote => true do |f| %>
-  <%= f.text_field :first_name, id:'input-first-name' %>
-  <%= f.text_field :last_name, id:'input-last-name' %>
-  <%= f.text_field :phone, id:'input-phone' %>
-  <%= f.text_field :email, id:'input-email' %>
-  <%= f.submit %>
-<% end %>
+<div style='text-align:center'>
+  <h1>Welcome on Brest coworking website !</h1>
+  <p>You are looking for a coworking place to rent in Brest? Get into our waiting list:</p>
+  <%= form_for @waiting_user, :remote => true do |f| %>
+    <div class='item-form'>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, placeholder:'Harry', id:'input-first-name' %>
+    </div>
+    <div class='item-form'>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder:'Hall', id:'input-last-name' %>
+    </div>
+    <div class='item-form'>
+      <%= f.label :phone %>
+      <%= f.text_field :phone, placeholder: '0619014050', id:'input-phone' %>
+    </div>
+    <div class='item-form'>
+      <%= f.label :email %>
+      <%= f.text_field :email, placeholder:'harry.hall@gmail.com', id:'input-email' %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+  <p>You will be asked to confirm your registration by e-mail right after submitting this form.</p>
+  <p> Then, you will receive an email every 15 days to remain on the waiting list.</p>
+</div>
