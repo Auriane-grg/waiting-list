@@ -1,4 +1,11 @@
-<h1>Welcome <%= @user.first_name.capitalize %></h1>
-<p>Thanks !</p>
+<div style="text-align: center">
+  <h1>Welcome <%= @user.first_name.capitalize %></h1>
 
+  <p>To confirm your inscription into the waiting list for Brest coworking, just follow <a href="<%= url_for(host: 'http://localhost:3000/',
+              controller: 'pages',
+              action: 'queue_position',
+              user: @user ) %>" %>this link</a></p>
+  <p>Thank you!</p>
 
+  <p><i>Brest Coworking Team</i></p>
+</div>
