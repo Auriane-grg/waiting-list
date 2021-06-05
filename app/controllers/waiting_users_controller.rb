@@ -6,13 +6,13 @@ class WaitingUsersController < ApplicationController
 
   def create
     @waiting_user = WaitingUser.new(waiting_user_params)
-    respond_to do |format|
-      if @waiting_user.save
-        UserMailer.with(user: @waiting_user).welcome_email.deliver_later
-        format.html { redirect_to pages_first_inscription_path(:user => @waiting_user) }
-      else
-        format.html { render action: 'new' }
+    if @waiting_user.save
+      respond_to do |format|
+      UserMailer.with(user: @waiting_user).welcome_email.deliver_later
+      format.html { redirect_to pages_first_inscription_path(:user => @waiting_user) }
       end
+    else
+      render 'new'
     end
   end
 
