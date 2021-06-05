@@ -1,1 +1,1 @@
-worker: bundle exec sidekiq
+mailingworker: bundle exec sidekiq -c 2
