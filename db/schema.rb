@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_06_05_092246) do
     t.string "last_name"
     t.string "first_name"
     t.string "email"
-    t.integer "queue_position"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "last_validation"

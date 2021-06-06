@@ -1,11 +1,13 @@
 class PagesController < ApplicationController
 
-  def first_inscription
-    @user = WaitingUser.find(params[:user])
+  #  Page seen just after submitting the new user form :
+  def first_registration
+    @user = WaitingUser.find(params[:id])
   end
 
+  # Page of the email sent every 15 days :
   def queue_position
-    @waiting_user = WaitingUser.find(params[:user])
+    @waiting_user = WaitingUser.find(params[:id])
 
     # test when programming on development environnement are commented below :
     minutes = 10
@@ -32,8 +34,9 @@ class PagesController < ApplicationController
     # @waiting_user.update_attributes(queue_position: (count_waiting+1)) 
   end
 
-  def cancel_inscription
-    @canceling_user = WaitingUser.find(params[:user])
+  # Page seen when the user is deleted because he did not confirm his interest for the waiting list after 20 days :
+  def cancel_registration
+    @canceling_user = WaitingUser.find(params[:id])
     # @waiting_users = WaitingUser.where('queue_position > ?', @canceling_user.queue_position)
     # @waiting_users.each do |user| 
     #   user.update_attributes(queue_position: (user.queue_position-=1))

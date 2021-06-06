@@ -9,7 +9,7 @@ class WaitingUsersController < ApplicationController
     if @waiting_user.save
       respond_to do |format|
       UserMailer.with(user: @waiting_user).welcome_email.deliver_later
-      format.html { redirect_to pages_first_inscription_path(:user => @waiting_user) }
+      format.html { redirect_to pages_first_registration_path(:id => @waiting_user.id) }
       end
     else
       render 'new'
@@ -19,6 +19,6 @@ class WaitingUsersController < ApplicationController
   private
 
   def waiting_user_params
-    params.require(:waiting_user).permit(:first_name, :last_name, :phone, :email, :queue_position)
+    params.require(:waiting_user).permit(:first_name, :last_name, :phone, :email)
   end
 end

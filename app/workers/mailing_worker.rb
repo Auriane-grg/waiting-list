@@ -5,16 +5,16 @@ class MailingWorker
     now = Time.now.to_i
 
     # test when programming on development environnement are commented below :
-    # minutes = 1
-    # days = 0
-    # day_delay = 0
-    # minute_delay = 5
+    minutes = 1
+    days = 0
+    day_delay = 0
+    minute_delay = 5
 
     # production values :
-    minutes = 0
-    days = 20
-    day_delay = 5
-    minute_delay = 0
+    # minutes = 0
+    # days = 20
+    # day_delay = 5
+    # minute_delay = 0
 
     d15 = days * 86400 + minutes * 60
     d20 = d15 + day_delay * 86400 + minute_delay * 60
@@ -52,3 +52,10 @@ class MailingWorker
   end
 
 end
+
+
+# To do : here, if someone register to the waiting list but never confirm, he/she will stay in the db
+# he / she won't be in the waiting list (last validaton will be unset) but be in the db
+# To do : destroy this kind of personn 20 days after their creation date even
+# Here, this people are not taken into the worker this the definition of the targeted people to destroy is based on the last validation field
+# I did not code that part by lack of time -> my creation date and my validation date are not based on the same time zone, need to convert or so

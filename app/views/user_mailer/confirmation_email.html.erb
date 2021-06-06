@@ -8,17 +8,17 @@
     <a href="<%= url_for(host: 'https://waiting-list-mailer.herokuapp.com/',
       controller: 'pages',
       action: 'queue_position',
-      user: @user ) %>" >
+      id: @user.id ) %>" >
         this link
       </a>
     .
   </p>
   <p>
-    To cancel your inscription into the waiting list for Brest coworking, just clic 
+    To cancel your registration into the waiting list for Brest coworking, just clic 
       <a href="<%= url_for(host: 'https://waiting-list-mailer.herokuapp.com/',
       controller: 'pages',
-      action: 'cancel_inscription',
-      user: @user ) %>" >
+      action: 'cancel_registration',
+      id: @user.id ) %>" >
         here
       </a>
     .

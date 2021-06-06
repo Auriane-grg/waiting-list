@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
   # Email received right after submiting the form to get on the waiting list
   def welcome_email
     @user = params[:user]
-    mail(to: @user.email, subject: 'Confirm you inscription to Brest waiting list')
+    mail(to: @user.email, subject: 'Confirm you registration to Brest waiting list')
   end
 
   # Email received every 15 days

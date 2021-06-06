@@ -4,21 +4,25 @@
   <%= form_for @waiting_user, :remote => true do |f| %>
     <div class='item-form'>
       <%= f.label :first_name %>
-      <%= f.text_field :first_name, placeholder:'Harry', id:'input-first-name' %>
+      <%= f.text_field :first_name, placeholder:'Harry', class:'input'%>
+      <p class='error-message'></p>
     </div>
     <div class='item-form'>
       <%= f.label :last_name %>
-      <%= f.text_field :last_name, placeholder:'Hall', id:'input-last-name' %>
+      <%= f.text_field :last_name, placeholder:'Hall', class:'input' %>
+      <p class='error-message'></p>
     </div>
     <div class='item-form'>
       <%= f.label :phone %>
-      <%= f.text_field :phone, placeholder: '0619014050', id:'input-phone' %>
+      <%= f.text_field :phone, placeholder: '0619014050', id:'input-phone', class:'input' %>
+      <p class='error-message'></p>
     </div>
     <div class='item-form'>
       <%= f.label :email %>
-      <%= f.text_field :email, placeholder:'harry.hall@gmail.com', id:'input-email' %>
+      <%= f.text_field :email, placeholder:'harry.hall@gmail.com', id:'input-email', class:'input' %>
+      <p class='error-message'></p>
     </div>
-    <%= f.submit %>
+    <%= f.submit id:'submit-btn' %>
   <% end %>
   <p>You will be asked to confirm your registration by e-mail right after submitting this form.</p>
   <p> Then, you will receive an email every 15 days to remain on the waiting list.</p>

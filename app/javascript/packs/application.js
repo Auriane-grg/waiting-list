@@ -15,3 +15,10 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import { errorsNewForm } from '../plugins/errors_new_form';
+
+
+document.addEventListener('turbolinks:load', () => {
+  errorsNewForm();
+});
