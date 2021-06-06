@@ -5,16 +5,16 @@ class MailingWorker
     now = Time.now.to_i
 
     # test when programming on development environnement are commented below :
-    minutes = 1
-    days = 0
-    day_delay = 0
-    minute_delay = 5
+    # minutes = 1
+    # days = 0
+    # day_delay = 0
+    # minute_delay = 5
 
     # production values :
-    # minutes = 0
-    # days = 20
-    # day_delay = 5
-    # minute_delay = 0
+    minutes = 0
+    days = 20
+    day_delay = 5
+    minute_delay = 0
 
     d15 = days * 86400 + minutes * 60
     d20 = d15 + day_delay * 86400 + minute_delay * 60
