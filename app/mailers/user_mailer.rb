@@ -11,13 +11,13 @@ class UserMailer < ApplicationMailer
   def confirmation_email
     @user = params[:user]
     mail(to: @user.email, subject: 'Warning: still looking for a coworking place?')
-    p 'test confirmation mail \n'
+    # p 'test confirmation mail \n'
   end
 
   # Email received if the last validation was 20 days ago
   def cancel_email
     @user = params[:user]
     mail(to: @user.email, subject: 'You\'re no longer on the waiting list for Brest Coworking')
-    p 'test cancel mail \n'
+    # p 'test cancel mail \n'
   end
 end

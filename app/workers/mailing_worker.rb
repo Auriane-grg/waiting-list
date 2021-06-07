@@ -12,7 +12,7 @@ class MailingWorker
 
     # production values :
     minutes = 0
-    days = 20
+    days = 15
     day_delay = 5
     minute_delay = 0
 
