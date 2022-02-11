@@ -29,6 +29,7 @@ class PagesController < ApplicationController
       @waiting_user.update_attributes(last_validation: now)
       @waiting_user.update_attributes(to_be_cancelled: false)
     end
+    
     waiting_users = WaitingUser.where('last_validation < ?', @waiting_user.last_validation)
     @count_waiting = waiting_users.count
     # @waiting_user.update_attributes(queue_position: (count_waiting+1)) 
